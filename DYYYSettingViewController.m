@@ -251,7 +251,7 @@ typedef NS_ENUM(NSInteger, DYYYSettingItemType) {
 
 - (void)showAgreementAlert {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"用户协议"
-                                                                             message:@"本插件为开源项目\n仅供学习交流用途\n如有侵权请联系, GitHub 仓库：huami1314/DYYY\n请遵守当地法律法规, 逆向工程仅为学习目的\n盗用源码进行商业用途/发布但未标记开源项目必究\n详情请参阅项目内 MIT 许可证\n\n请输入\"我已阅读并同意继续使用\"以继续使用"
+                                                                             message:@"本插件为开源项目\n仅供学习交流用途\n如有侵权请联系, GitHub 仓库：huami1314/DYYY\n请遵守当地法律法规, 逆向工程仅为学习目的\n盗用源码进行商业用途/发布但未标记开源项目必究\n详情请参阅项目内 MIT 许可证\n\n请输入\"\"以继续使用"
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -262,7 +262,7 @@ typedef NS_ENUM(NSInteger, DYYYSettingItemType) {
         UITextField *textField = alertController.textFields.firstObject;
         NSString *inputText = textField.text;
         
-        if ([inputText isEqualToString:@"我已阅读并同意继续使用"]) {
+        if ([inputText isEqualToString:@""]) {
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"DYYYUserAgreementAccepted"];
             [[NSUserDefaults standardUserDefaults] synchronize];
         } else {
