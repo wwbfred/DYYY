@@ -1230,7 +1230,7 @@
     for (AWEHPTopTabItemModel *tabItemModel in channelModels) {
         NSString *channelID = tabItemModel.channelID;
         
-        BOOL isHideChannel = No;
+        BOOL isHideChannel = NO;
 	if ([channelID isEqualToString:@"homepage_hot_container"]) {
             isHideChannel = [defaults boolForKey:@"DYYYHideHotContainer"];
         }else if ([channelID isEqualToString:@"homepage_follow"]) {
