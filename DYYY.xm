@@ -1235,7 +1235,7 @@
             continue;
         }
         
-        BOOL isHideChannel = NO;
+        BOOL isHideChannel = YES;
         if ([channelID isEqualToString:@"homepage_follow"]) {
             isHideChannel = [defaults boolForKey:@"DYYYHideFollow"];
         } else if ([channelID isEqualToString:@"homepage_mediumvideo"]) {
