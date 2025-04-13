@@ -1230,13 +1230,10 @@
     for (AWEHPTopTabItemModel *tabItemModel in channelModels) {
         NSString *channelID = tabItemModel.channelID;
         
-        if ([channelID isEqualToString:@"homepage_hot_container"]) {
-            [newChannelModels addObject:tabItemModel];
-            continue;
-        }
-        
-        BOOL isHideChannel = YES;
-        if ([channelID isEqualToString:@"homepage_follow"]) {
+        BOOL isHideChannel = No;
+	if ([channelID isEqualToString:@"homepage_hot_container"]) {
+            isHideChannel = [defaults boolForKey:@"DYYYHideHotContainer"];
+        }else if ([channelID isEqualToString:@"homepage_follow"]) {
             isHideChannel = [defaults boolForKey:@"DYYYHideFollow"];
         } else if ([channelID isEqualToString:@"homepage_mediumvideo"]) {
             isHideChannel = [defaults boolForKey:@"DYYYHideMediumVideo"];
